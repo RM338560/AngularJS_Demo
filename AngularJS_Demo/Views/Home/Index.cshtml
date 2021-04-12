@@ -144,7 +144,7 @@
                 }
             }).then(function (response) {
                 $scope.employee = JSON.parse(response.data);
-                $scope.message = "Employee added Successfully";
+                $scope.message = "Adicionado com sucesso";
 
                 $("#AddModal").modal("hide");
             }, function (error) {
@@ -167,7 +167,7 @@
                 }
             }).then(function (response) {
                 $scope.employee = JSON.parse(response.data);
-                $scope.message = "Employee updated Successfully";
+                $scope.message = "Atualizado com sucesso";
                 $("#EditModal").modal("hide");
             }, function (error) {
                 console.log(error);
@@ -185,7 +185,7 @@
                 }
             }).then(function (response) {
                 $scope.employee = JSON.parse(response.data);
-                $scope.message = "Employee Deleted Successfully";
+                $scope.message = "Apagado com sucesso";
                 $("#EditModal").modal("hide");
             }, function (error) {
                 console.log(error);

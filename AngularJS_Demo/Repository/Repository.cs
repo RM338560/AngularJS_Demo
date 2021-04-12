@@ -18,7 +18,7 @@ namespace AngularJS_Demo.Repository
             string response = "";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("InsertEmployee", conn);
+                SqlCommand cmd = new SqlCommand("Employee_Insert", conn);
                 cmd.Parameters.Add("@Name", SqlDbType.NVarChar, 50).Value = empDetails.Name;
                 cmd.Parameters.Add("@Email", SqlDbType.NVarChar, 50).Value = empDetails.Email;
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -36,7 +36,7 @@ namespace AngularJS_Demo.Repository
             string response = "";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("DeleteEmployee", conn);
+                SqlCommand cmd = new SqlCommand("Employee_Delete", conn);
                 cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -53,7 +53,7 @@ namespace AngularJS_Demo.Repository
             List<EmployeeModel> list = new List<EmployeeModel>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("dbo.SelectEmployee", conn);
+                SqlCommand cmd = new SqlCommand("Employee_GetAll", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -84,7 +84,7 @@ namespace AngularJS_Demo.Repository
             string response = "";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("UpdateEmployee", conn);
+                SqlCommand cmd = new SqlCommand("Employee_Update", conn);
                 cmd.Parameters.Add("@ID", SqlDbType.Int).Value = empdetails.ID;
                 cmd.Parameters.Add("@Name", SqlDbType.NVarChar, 50).Value = empdetails.Name;
                 cmd.Parameters.Add("@Email", SqlDbType.NVarChar, 50).Value = empdetails.Email;
